@@ -48,8 +48,9 @@ def load(root):
         for item in items:
             set_item(item, root)
 def add_db_item(item):
-    if list_ref.get()[item] == True:
-        list_ref.update({item: True})
+    if list_ref.get():
+        if list_ref.get()[item]:
+            list_ref.update({item: True})
     else:
         list_ref.update({item: False})
 
